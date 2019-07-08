@@ -13,20 +13,20 @@
     	</header>
     	<section>
     		<form action="${pageContext.request.contextPath }/dologin.html" method="post">
-    			<div>${error}</div>
-    			<div>
-    				<label for="userCode">用戶名:</label>
-    				<input name="userCode" required="required" placeholder="請輸入用戶名"/>
-    			</div>
-    			<div>
-    				<label for="userPassword">用戶名:</label>
-    				<input type="password" name="userPassword" required="required" placeholder="請輸入密碼"/>
-    			</div>
-    			<div>
-    				<input type="submit"  name="submit" value="提交"/>
-    			</div>
-    		</form>
-    	</section>
+		<div>${error}</div>
+		<div>
+
+			<input name="userCode" required="required" placeholder="請輸入用戶名"/>
+		</div>
+		<div>
+
+			<input type="password" name="userPassword" required="required" placeholder="請輸入密碼"/>
+		</div>
+		<div>
+			<input type="submit"  name="submit" value="提交"/>
+		</div>
+	</form>
+	</section>
     </section>
 </body>
 </html>
