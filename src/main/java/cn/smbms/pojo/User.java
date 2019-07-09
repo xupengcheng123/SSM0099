@@ -14,9 +14,7 @@ public class User {
 	private String userName; //用户名称
 	
 
-	private String userPassword; //用户密码	
-	
-	@Past(message="必须是一个过去的时间")
+	private String userPassword; //用户密码
 	//@DateTimeFormat(pattern="yyyy-MM-dd")
 	@JSONField(format="yyyy-MM-dd")
 	private Date birthday;  //出生日期

@@ -10,5 +10,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				and userCode = #{userCode}
 			</if>
 		</trim>
-	</select>		
+	</select>
+	<select id="getUserList" resultType="User">
+		select * from smbms_user
+	</select>
+	<delete id="delUser">
+		delete from smbms_user where id=#{id}
+	</delete>
+	<select id="getUserById" resultType="User">
+		select * from smbms_user where id=#{id}
+	</select>
+	<insert id="insertUser" parameterType="User">
+		insert into smbms_user(userCode,userName,phone,address,userRole)
+		values(#{userCode},#{userName},#{phone},#{address},#{userRole})
+	</insert>
+	<update id="updateUser" parameterType="User">
+		update smbms_user set userCode=#{userCode},userName=#{userName},phone=#{phone},address=#{address},userRole=#{userRole} where id=#{id}
+	</update>
 </mapper>
