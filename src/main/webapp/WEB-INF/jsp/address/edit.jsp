@@ -15,29 +15,26 @@
         </header>
     </section>
     <div>
-        <form action="${pageContext.request.contextPath }/save.html" method="post">
-            <input type="hidden" name="id" value="${user.id}">
+        <form action="${pageContext.request.contextPath }/address/save.html" method="post">
+            <input type="hidden" name="id" value="${address.id}">
             <table>
                 <tr>
-                    <td>用户编码</td>
-                    <td><input name="userCode" value="${user.userCode}"></td>
+                    <td>联系人姓名</td>
+                    <td><input name="contact" value="${address.contact}"></td>
                 </tr>
                 <tr>
-                    <td>用户姓名</td>
-                    <td><input name="userName" value="${user.userName}"></td>
+                    <td>收货地址明细</td>
+                    <td><input name="addressDesc" value="${address.addressDesc}"></td>
                 </tr>
                 <tr>
-                    <td>用户电话</td>
-                    <td><input name="phone" value="${user.phone}"></td>
+                    <td>邮编</td>
+                    <td><input name="postCode" value="${address.postCode}"></td>
                 </tr>
                 <tr>
-                    <td>用户地址</td>
-                    <td><input name="address" value="${user.address}"></td>
+                    <td>联系人电话</td>
+                    <td><input name="tel" value="${address.tel}"></td>
                 </tr>
-                <tr>
-                    <td>用户角色</td>
-                    <td><input name="userRole" value="${user.userRole}"></td>
-                </tr>
+              
                 <tr>
                     <td colspan="2"><input type="submit" value="保存"/> </td>
 

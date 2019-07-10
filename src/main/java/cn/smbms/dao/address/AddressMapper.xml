@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.smbms.dao.address.AddressMapper">
+	<select id="getAddressList" resultType="Address">
+		select * from smbms_address
+	</select>
+	<delete id="delAddress">
+		delete from smbms_address where id=#{id}
+	</delete>
+	<select id="getAddressById" resultType="Address">
+		select * from smbms_address where id=#{id}
+	</select>
+	<insert id="insertAddress" parameterType="Address">
+		insert into smbms_address(contact,addressDesc,postCode,tel)
+		values(#{contact},#{addressDesc},#{postCode},#{tel})
+	</insert>
+	<update id="updateAddress" parameterType="Address">
+		update smbms_address set contact=#{contact},addressDesc=#{addressDesc},postCode=#{postCode},tel=#{tel} where id=#{id}
+	</update>
+</mapper>

@@ -15,29 +15,18 @@
         </header>
     </section>
     <div>
-        <form action="${pageContext.request.contextPath }/save.html" method="post">
+        <form action="${pageContext.request.contextPath }/role/save.html" method="post">
 
             <table>
                 <tr>
                     <td>用户编码</td>
-                    <td>${user.userCode}</td>
+                    <td>${role.roleCode}</td>
                 </tr>
                 <tr>
                     <td>用户姓名</td>
-                    <td>${user.userName}</td>
+                    <td>${role.roleName}</td>
                 </tr>
-                <tr>
-                    <td>用户电话</td>
-                    <td>${user.phone}</td>
-                </tr>
-                <tr>
-                    <td>用户地址</td>
-                    <td>${user.address}</td>
-                </tr>
-                <tr>
-                    <td>用户角色</td>
-                    <td>${user.userRole}</td>
-                </tr>
+
             </table>
         </form>
     </div>

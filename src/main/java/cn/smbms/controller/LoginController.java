@@ -29,52 +29,15 @@ public class LoginController {
 		User user=userService.login(userCode, userPassword);
 		if(null!=user){
 			session.setAttribute("userLogin", user);
-			return "redirect:sys/main.html";
+			return "main";
 		}
 		else{
 			request.setAttribute("error", "用戶名或密碼不正確");
 			return "login";
 		}
 	}
-	@RequestMapping(value="/sys/main.html",method=RequestMethod.GET)
-	public String main(Model model){
-		List<User> userList = new ArrayList<User>();
-		userList =userService.getUserList();
-		model.addAttribute("userList",userList);
+	@RequestMapping(value="main.html",method=RequestMethod.GET)
+	public String main(){
 		return "main";
-	}
-	@RequestMapping(value="/del.html")
-	public String del(@RequestParam int id){
-		if(userService.delUser(id)){
-			return "redirect:sys/main.html";
-		}
-		return "redirect:sys/main.html";
-	}
-	@RequestMapping(value="/add.html")
-	public String add(){
-		return "edit";
-	}
-	@RequestMapping(value="/save.html")
-	public String save(User user){
-		if(null!=user&&null!=user.getId()&&!"".equals(user.getId())){
-			boolean flag =userService.updateUser(user);
-		}
-		else{
-			boolean flag =userService.insertUser(user);
-		}
-
-		return "redirect:sys/main.html";
-	}
-	@RequestMapping(value="update.html")
-	public String update(@RequestParam int id,Model model){
-		User user =userService.getUserById(id);
-		model.addAttribute("user", user);
-		return "edit";
-	}
-	@RequestMapping(value="view.html")
-	public String view(@RequestParam int id,Model model){
-		User user =userService.getUserById(id);
-		model.addAttribute("user", user);
-		return "view";
 	}
 }
